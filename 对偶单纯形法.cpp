@@ -35,11 +35,11 @@ int main(){
 	int huanru = 0;
 	int huanchu = 0;
 
-	cout << "------------------¶ÔÅ¼µ¥´¿ÐÎ·¨---------------------" << endl << endl;
+	cout << "------------------å¯¹å¶å•çº¯å½¢æ³•---------------------" << endl << endl;
 
-	cout << "ÇëÊäÈëÔö¹ã¾ØÕóµÄÐÐÊý £º   ";
+	cout << "è¯·è¾“å…¥å¢žå¹¿çŸ©é˜µçš„è¡Œæ•° ï¼š   ";
 	cin >> m;
-	cout << "ÇëÊäÈëÔö¹ã¾ØÕóµÄÁÐÊý£º     ";
+	cout << "è¯·è¾“å…¥å¢žå¹¿çŸ©é˜µçš„åˆ—æ•°ï¼š     ";
 	cin >> n;
 
 	double *jianyanshu = new double[n - 1];
@@ -54,7 +54,7 @@ int main(){
 			A[i][j] = 0;
 		}
 	}
-	cout << "ÇëÊäÈëÄ¿±êº¯ÊýµÄÏµÊý:" << endl;
+	cout << "è¯·è¾“å…¥ç›®æ ‡å‡½æ•°çš„ç³»æ•°:" << endl;
 	for (int i = 1; i < n; i++){ cout << "x" << i << "  "; }
 	cout << endl;
 	
@@ -63,10 +63,10 @@ int main(){
 		xishu[i]=jianyanshu[i];
 		
 	}
-	cout << "Çó×î´óÖµ»¹ÊÇÇó×îÐ¡Öµ£¬ ×î´óÖµÎª1£¬×îÐ¡ÖµÎª-1£º      " << endl;
+	cout << "æ±‚æœ€å¤§å€¼è¿˜æ˜¯æ±‚æœ€å°å€¼ï¼Œ æœ€å¤§å€¼ä¸º1ï¼Œæœ€å°å€¼ä¸º-1ï¼š      " << endl;
 	cin >> w;
 
-	cout << "ÇëÊäÈë¸ÃÔö¹ã¾ØÕó" << endl;
+	cout << "è¯·è¾“å…¥è¯¥å¢žå¹¿çŸ©é˜µ" << endl;
 	for (int i = 1; i < n; i++){ cout << "x" << i << "     "<<"  b"; }
 	cout << endl;
 	for (int i = 0; i < m; i++)
@@ -77,25 +77,25 @@ int main(){
 		}
 	}
 	int  *jilu = new int[m];
-	double *b=new double [m];//×¨ÃÅ¼ÇÂ¼bÁÐµÄÊý×Ö
+	double *b=new double [m];//ä¸“é—¨è®°å½•båˆ—çš„æ•°å­—
 	
 
 	for (int i = 0; i<m; i++){
 		jilu[i] = n - 1 - m + i;
-	}//ÕâÊÇÔÚ¼ÇÂ¼»ù±äÁ¿µÄÏÂ±ê
-	//¼ÆËã¹ý³Ì
+	}//è¿™æ˜¯åœ¨è®°å½•åŸºå˜é‡çš„ä¸‹æ ‡
+	//è®¡ç®—è¿‡ç¨‹
 	for (int i = 0; i<m; i++){
 		while (A[i][n-1]<0){
 for(int i=0;i<m;i++){
 		b[i]=A[i][n-1];}
-			huanchu = Min(b,m);//huanchuÎª»»³öÔªËØµÄÏÂ±ê
-			//È·¶¨»»³ö±äÁ¿£¬Ñ¡È¡bÖÐ×îÐ¡µÄ
+			huanchu = Min(b,m);//huanchuä¸ºæ¢å‡ºå…ƒç´ çš„ä¸‹æ ‡
+			//ç¡®å®šæ¢å‡ºå˜é‡ï¼Œé€‰å–bä¸­æœ€å°çš„
 			int tempi=0;
 			for(int i=0;i<n-1;i++){
 				if(A[huanchu][i]>0){
 					tempi++;}}
 			if(tempi==n-1){
-				cout<<"ÎÞ¿ÉÐÐ½â"<<endl;
+				cout<<"æ— å¯è¡Œè§£"<<endl;
 				return 0;}
 			
 
@@ -113,7 +113,7 @@ for(int i=0;i<m;i++){
 			huanru=Min(jianyanshu,n-1);
 				
 
-			const double x = A[huanchu][huanru];//A¡¾huanchu¡¿¡¾»»Èë¡¿¸Ä±äÁË£¬µÃ²»µ½ÕýÈ·½á¹û
+			const double x = A[huanchu][huanru];//Aã€huanchuã€‘ã€æ¢å…¥ã€‘æ”¹å˜äº†ï¼Œå¾—ä¸åˆ°æ­£ç¡®ç»“æžœ
 			for (int i = 0; i < n; i++){
 				A[huanchu][i] = (A[huanchu][i] / x);
 			}
@@ -122,13 +122,13 @@ for(int i=0;i<m;i++){
 			for (int i = 0; i < m; i++){
 				temp[i] = A[i][huanru];
 			}
-			for (int i = 0; i < huanchu; i++){//ÐÐ
-				for (int j = 0; j < n; j++){//ÁÐ
+			for (int i = 0; i < huanchu; i++){//è¡Œ
+				for (int j = 0; j < n; j++){//åˆ—
 					A[i][j] = (A[i][j] - A[huanchu][j] * temp[i]);
 				}
 			}
-			for (int i = huanchu + 1; i < m; i++){//ÐÐ
-				for (int j = 0; j < n; j++){//ÁÐ
+			for (int i = huanchu + 1; i < m; i++){//è¡Œ
+				for (int j = 0; j < n; j++){//åˆ—
 					A[i][j] = (A[i][j] - A[huanchu][j] * temp[i]);
 				}
 			}
@@ -137,10 +137,10 @@ for(int i=0;i<m;i++){
 			for (int i = 0; i < n - 1; i++){
 				jianyanshu[i] = jianyanshu[i] - y * A[huanchu][i];
 			}
-			//¼ÇÂ¼ÏÂ´ËÊ±»ù±äÁ¿ºÍ·Ç»ù±äÁ¿
+			//è®°å½•ä¸‹æ­¤æ—¶åŸºå˜é‡å’ŒéžåŸºå˜é‡
 			jilu[huanchu] = huanru + 1;}}
 
-	cout << "×îÖÕ±íÎª" << endl;
+	cout << "æœ€ç»ˆè¡¨ä¸º" << endl;
 	for (int i = 0; i < m; i++){
 		for (int j = 0; j < n; j++){
 			cout << A[i][j] << "  ";
@@ -148,7 +148,7 @@ for(int i=0;i<m;i++){
 		cout << endl;
 	}
 	double s = 0;
-	cout << "»ù±äÁ¿·Ö±ðÎª" << endl;
+	cout << "åŸºå˜é‡åˆ†åˆ«ä¸º" << endl;
 	
 	for (int i = 0; i<m; i++){
 
